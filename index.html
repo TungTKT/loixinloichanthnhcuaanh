@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gửi em, người anh thương ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Segoe UI", sans-serif;
+    background:#080914;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* ================= NỀN ================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-2;
+    background:
+        radial-gradient(circle at 20% 20%, #5b2147 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #25235d 0%, transparent 30%),
+        #080914;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2}
+    to{opacity:1}
+}
+
+/* ================= MÀN HÌNH MỞ ĐẦU ================= */
+
+#intro{
+    position:fixed;
+    inset:0;
+    background:#080914;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:100;
+    transition:1s;
+}
+
+.envelope{
+    width:220px;
+    height:150px;
+    background:#f4a6bd;
+    border-radius:10px;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 20px 50px rgba(255,80,140,.25);
+    animation: float 2s infinite ease-in-out;
+}
+
+.envelope:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    border-left:110px solid transparent;
+    border-right:110px solid transparent;
+    border-top:80px solid #d96b91;
+}
+
+.heartSeal{
+    position:absolute;
+    left:50%;
+    top:55%;
+    transform:translate(-50%,-50%);
+    font-size:42px;
+}
+
+.openText{
+    margin-top:35px;
+    color:#ffb6cf;
+    font-size:18px;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes float{
+    50%{transform:translateY(-12px)}
+}
+
+@keyframes pulse{
+    50%{opacity:.5}
+}
+
+/* ================= MAIN ================= */
+
+main{
+    max-width:900px;
+    margin:auto;
+    padding:70px 25px;
+}
+
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+/* ================= TITLE ================= */
+
+.small{
+    color:#ff8db3;
+    letter-spacing:4px;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+h1{
+    font-size:clamp(45px,8vw,90px);
+    margin:20px 0;
+    background:linear-gradient(90deg,#fff,#ff8db3,#fff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.introText{
+    max-width:600px;
+    color:#c8c8d8;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* ================= LETTER ================= */
+
+.card{
+    width:min(700px,95%);
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:45px;
+    text-align:left;
+    box-shadow:0 20px 80px rgba(0,0,0,.3);
+}
+
+.card p{
+    color:#ddd;
+    font-size:17px;
+    line-height:2;
+    margin-bottom:18px;
+}
+
+.highlight{
+    color:#ff8db3;
+    font-weight:bold;
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline{
+    width:min(700px,95%);
+    text-align:left;
+}
+
+.timelineItem{
+    border-left:2px solid #ff709e;
+    padding:0 0 35px 30px;
+    position:relative;
+}
+
+.timelineItem:before{
+    content:"❤️";
+    position:absolute;
+    left:-13px;
+    top:0;
+    background:#080914;
+    font-size:18px;
+}
+
+.timelineItem h3{
+    color:#ff9fbd;
+    margin-bottom:8px;
+}
+
+.timelineItem p{
+    color:#bbb;
+    line-height:1.7;
+}
+
+/* ================= PROMISE ================= */
+
+.promise{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    width:min(700px,95%);
+}
+
+.promiseBox{
+    padding:30px;
+    border-radius:25px;
+    background:linear-gradient(
+        145deg,
+        rgba(255,120,160,.12),
+        rgba(100,90,255,.08)
+    );
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.promiseBox:hover{
+    transform:translateY(-8px);
+    border-color:#ff709e;
+}
+
+.promiseBox span{
+    font-size:35px;
+}
+
+.promiseBox h3{
+    margin:12px 0;
+}
+
+.promiseBox p{
+    color:#aaa;
+    line-height:1.6;
+}
+
+/* ================= FINAL ================= */
+
+.final h2{
+    font-size:clamp(35px,6vw,65px);
+    margin:20px;
+}
+
+.final p{
+    color:#aaa;
+    font-size:18px;
+    max-width:600px;
+    line-height:1.8;
+}
+
+.buttons{
+    margin-top:35px;
+}
+
+button{
+    border:none;
+    padding:17px 30px;
+    margin:8px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.yes{
+    background:#ff5688;
+    color:white;
+    box-shadow:0 10px 30px rgba(255,86,136,.3);
+}
+
+.yes:hover{
+    transform:scale(1.08);
+}
+
+.no{
+    background:#222331;
+    color:#aaa;
+}
+
+#result{
+    margin-top:25px;
+    color:#ff9fbd;
+    font-size:20px;
+    min-height:30px;
+}
+
+/* ================= HEARTS ================= */
+
+.heart{
+    position:fixed;
+    bottom:-40px;
+    pointer-events:none;
+    animation:rise linear forwards;
+    z-index:10;
+}
+
+@keyframes rise{
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .card{
+        padding:28px;
+    }
+
+    .promise{
+        grid-template-columns:1fr;
+    }
+
+    main{
+        padding:30px 15px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- NỀN -->
+<div class="background" id="stars"></div>
+
+<!-- MỞ ĐẦU -->
+<div id="intro">
+
+    <div class="envelope" onclick="openLetter()">
+        <div class="heartSeal">❤️</div>
+    </div>
+
+    <div class="openText">
+        Có một điều anh muốn nói với em...
+        <br><br>
+        Chạm vào lá thư ❤️
+    </div>
+
+</div>
+
+
+<main>
+
+<!-- SECTION 1 -->
+
+<section>
+
+    <div class="small">
+        Gửi người anh thương
+    </div>
+
+    <h1>Anh xin lỗi.</h1>
+
+    <p class="introText">
+        Có những điều nói trực tiếp đôi khi thật khó.
+        Vì vậy hôm nay anh muốn dùng một cách đặc biệt
+        để nói với em tất cả những điều anh đang nghĩ.
+    </p>
+
+</section>
+
+
+<!-- SECTION 2 -->
+
+<section>
+
+    <div class="small">Điều đầu tiên</div>
+
+    <div class="card">
+
+        <p>
+            Em à...
+        </p>
+
+        <p>
+            Anh biết thời gian vừa rồi có thể anh đã làm em buồn.
+            Có thể anh đã nói những lời khiến em tổn thương,
+            hoặc có những lúc anh chưa đủ tinh tế để hiểu cảm xúc của em.
+        </p>
+
+        <p>
+            Anh không muốn tìm lý do để giải thích cho những điều đó.
+            <span class="highlight">Anh sai thì anh nhận.</span>
+        </p>
+
+        <p>
+            Anh chỉ muốn em biết rằng lời xin lỗi này
+            không phải vì anh sợ mất em,
+            mà vì anh thật sự nhận ra mình đã làm người mình thương buồn.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SECTION 3 -->
+
+<section>
+
+    <div class="small">Những điều anh nhận ra</div>
+
+    <h2 style="font-size:40px;margin:20px 0 40px;">
+        Có những điều nhỏ bé...
+    </h2>
+
+    <div class="timeline">
+
+        <div class="timelineItem">
+
+            <h3>Anh cần lắng nghe em nhiều hơn</h3>
+
+            <p>
+                Không phải lúc nào anh cũng đúng.
+                Đôi khi điều em cần chỉ đơn giản là
+                có một người chịu ngồi nghe em nói.
+            </p>
+
+        </div>
+
+
+        <div class="timelineItem">
+
+            <h3>Anh cần biết trân trọng hơn</h3>
+
+            <p>
+                Những tin nhắn, những câu hỏi han,
+                những lần em quan tâm đến anh...
+                Anh không muốn coi chúng là điều hiển nhiên.
+            </p>
+
+        </div>
+
+
+        <div class="timelineItem">
+
+            <h3>Anh cần trưởng thành hơn</h3>
+
+            <p>
+                Thay vì hơn thua trong một cuộc cãi nhau,
+                anh muốn học cách bảo vệ tình cảm của hai đứa.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SECTION 4 -->
+
+<section>
+
+    <div class="small">Anh hứa</div>
+
+    <h2 style="font-size:40px;margin:20px 0 40px;">
+        Không phải lời hứa hoàn hảo...
+    </h2>
+
+    <div class="promise">
+
+        <div class="promiseBox">
+
+            <span>👂</span>
+
+            <h3>Lắng nghe</h3>
+
+            <p>
+                Anh sẽ cố gắng nghe em
+                trước khi phản ứng.
+            </p>
+
+        </div>
+
+
+        <div class="promiseBox">
+
+            <span>🤝</span>
+
+            <h3>Cùng nhau</h3>
+
+            <p>
+                Có chuyện gì thì mình cùng giải quyết,
+                không bỏ mặc nhau.
+            </p>
+
+        </div>
+
+
+        <div class="promiseBox">
+
+            <span>❤️</span>
+
+            <h3>Trân trọng</h3>
+
+            <p>
+                Anh sẽ trân trọng những điều
+                em dành cho anh.
+            </p>
+
+        </div>
+
+
+        <div class="promiseBox">
+
+            <span>🌷</span>
+
+            <h3>Cố gắng</h3>
+
+            <p>
+                Anh không hoàn hảo,
+                nhưng anh sẽ cố gắng tốt hơn.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <div style="font-size:70px;">
+        ❤️
+    </div>
+
+    <div class="small">
+        Và cuối cùng...
+    </div>
+
+    <h2>
+        Mình làm hòa nhé?
+    </h2>
+
+    <p>
+        Anh không mong em quên ngay mọi chuyện.
+        Anh chỉ mong em cho anh cơ hội để chứng minh
+        rằng anh thật sự trân trọng tình cảm này.
+    </p>
+
+    <div class="buttons">
+
+        <button class="yes" onclick="forgive()">
+            ❤️ Em đồng ý
+        </button>
+
+        <button class="no" onclick="stillLove()">
+            Em cần thêm thời gian...
+        </button>
+
+    </div>
+
+    <div id="result"></div>
+
+</section>
+
+</main>
+
+
+<script>
+
+/* ================= SAO ================= */
+
+for(let i=0;i<150;i++){
+
+    const star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
+
+    star.style.animationDelay=Math.random()*3+"s";
+
+    document.getElementById("stars").appendChild(star);
+
+}
+
+
+/* ================= MỞ THƯ ================= */
+
+function openLetter(){
+
+    const intro=document.getElementById("intro");
+
+    intro.style.opacity="0";
+
+    setTimeout(()=>{
+
+        intro.style.display="none";
+
+    },1000);
+
+    for(let i=0;i<20;i++){
+
+        setTimeout(createHeart,i*100);
+
+    }
+
+}
+
+
+/* ================= TIM BAY ================= */
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    const icons=[
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💓",
+        "💞"
+    ];
+
+    heart.innerHTML=
+        icons[Math.floor(Math.random()*icons.length)];
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=
+        (15+Math.random()*30)+"px";
+
+    heart.style.animationDuration=
+        (4+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
+
+}
+
+
+/* ================= NÚT ĐỒNG Ý ================= */
+
+function forgive(){
+
+    document.getElementById("result").innerHTML=
+        "🥹❤️ Cảm ơn em... Anh sẽ trân trọng cơ hội này.";
+
+    for(let i=0;i<40;i++){
+
+        setTimeout(createHeart,i*80);
+
+    }
+
+}
+
+
+/* ================= CẦN THỜI GIAN ================= */
+
+function stillLove(){
+
+    document.getElementById("result").innerHTML=
+        "Anh hiểu. Em cứ bình tĩnh nhé... Anh vẫn ở đây và vẫn thương em. ❤️";
+
+}
+
+
+/* ================= TIM NGẪU NHIÊN ================= */
+
+setInterval(createHeart,1200);
+
+</script>
+
+</body>
+</html>
